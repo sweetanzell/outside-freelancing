@@ -1,0 +1,499 @@
+
+$body-color: #000;
+$body-bg: #fff;
+$primary-color: #EFE1D4;
+$secondary-color-dustygreen: #C3C3B3;
+$secondary-color-lilac: #E1CECC;
+$btn-font-family: 'Garamond-Premiere-Pro-Reg';
+
+
+@import "bootstrap/scss/functions"; // Required
+@import "bootstrap/scss/variables"; // Required
+@import "bootstrap/scss/mixins"; // Required
+
+@import "bootstrap/scss/root"; // Required
+@import "bootstrap/scss/reboot"; // Required
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/carousel";
+@import "bootstrap/scss/utilities";
+
+//
+// Custom styles
+//
+
+//font-face
+
+@font-face {
+    font-family: 'sunset-gothic-bold-pro';
+    src: url('../fonts/sunset-gothic-bold-pro.eot');
+    src: url('../fonts/sunset-gothic-bold-pro.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sunset-gothic-bold-pro.woff2') format('woff2'),
+         url('../fonts/sunset-gothic-bold-pro.woff') format('woff'),
+         url('../fonts/sunset-gothic-bold-pro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond-Premiere-Pro-Reg';
+    src: url('../fonts/GaramondPremierProRegular.eot');
+    src: url('../fonts/GaramondPremierProRegular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GaramondPremierProRegular.woff2') format('woff2'),
+        url('../fonts/GaramondPremierProRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garamond-Premiere-Med';
+    src: url('../fonts/GaramondPremrPro-Med.eot');
+    src: url('../fonts/GaramondPremrPro-Med.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GaramondPremrPro-Med.woff2') format('woff2'),
+        url('../fonts/GaramondPremrPro-Med.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+  font: 1rem/1.2 'Garamond-Premiere-Pro-Reg';
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  @media all and (min-width: 600px) {
+    font-size: 1.175rem;
+  }
+  @media all and (min-width: 900px) {
+    font-size: 1.35rem;
+  }
+  @media all and (min-width: 1300px) {
+    font-size: 1.688rem;
+  }
+}
+
+h2 {
+   font: 1.563rem/0.95 'sunset-gothic-bold-pro';
+   text-transform: uppercase;
+   @media all and (min-width: 600px) {
+     font-size: 2rem;
+   }
+   @media all and (min-width: 900px) {
+     font-size: 2.375rem;
+   }
+   @media all and (min-width: 1300px) {
+     font-size: 3.938rem;
+     line-height: 0.9;
+   }
+}
+
+h4 {
+  font: 1.5em/1 'Garamond-Premiere-Pro';
+  margin-bottom: 1.5rem;
+  padding: 0 2rem;
+
+  @media all and (min-width: 600px) {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    padding: 0 3rem;
+  }
+  @media all and (min-width: 900px) {
+    font-size: 2.475rem;
+    margin-bottom: 2.5rem;
+    padding: 0 5rem;
+  }
+  @media all and (min-width: 1300px) {
+    margin-bottom: 3rem;
+    padding: 0 7.5rem;
+  }
+  @media all and (min-width: 1680px) {
+     padding: 0 15rem;
+  }
+}
+
+h5 {
+  font: 0.875rem/0.95 'sunset-gothic-bold-pro';
+  text-transform: uppercase;
+   @media all and (min-width: 600px) {
+     font-size: 1rem;
+   }
+
+   @media all and (min-width: 900px) {
+     font-size: 1.275rem;
+   }
+  @media all and (min-width: 1300px) {
+    font-size: 1.75rem;
+  }
+}
+
+hr {
+  border-top: 8px solid $primary-color;
+  clear: both;
+  margin: 1.5rem 2rem 0;
+  @media all and (min-width: 600px) {
+    margin: 2rem 3rem 0.5rem;
+  }
+
+  @media all and (min-width: 900px) {
+     margin: 2.5rem 5rem 1rem;
+  }
+
+  @media all and (min-width: 1300px) {
+    border-width: 0.625rem;
+    margin: 3rem 7.5rem 1.5rem;
+  }
+
+   @media all and (min-width: 1680px) {
+     margin-left: 15rem;
+     margin-right: 15rem;
+   }
+}
+
+.btn {
+  &-primary {
+    background: $primary-color;
+    border: 0;
+    box-shadow: none;
+    color: $body-color;
+    @include button-size(16px, 24px, 1rem, 1.2, 0);
+    svg {
+      transition: margin 0.3s ease-in-out;
+      margin-left: 0.45rem;
+    }
+    &:hover,&:focus {
+      background: darken($primary-color,5%);
+      color: $body-color;
+      svg {
+        margin-left: 0.85rem;
+      }
+    }
+    @media all and (min-width: 600px) {
+      @include button-size(16px, 32px, 1.175rem, 1.2, 0);
+      height: 54px;
+    }
+    @media all and (min-width: 900px) {
+      font-size: 1.35rem;
+      height: 58px;
+      svg {
+        transform: scale(1.5);
+      }
+    }
+    @media all and (min-width: 1300px) {
+      font-size: 1.688rem;
+    }
+  }
+}
+
+.container {
+  clear: both;
+  max-width: calc(100% - 64px);
+  padding: 0;
+  @media all and (min-width: 600px) {
+    max-width: calc(100% - 96px);
+  }
+
+  @media all and (min-width: 900px) {
+    max-width: calc(100% - 160px);
+  }
+
+  @media all and (min-width: 1300px) {
+     max-width: calc(100% - 240px);
+  }
+
+  @media all and (min-width: 1680px) {
+    max-width: calc(100% - 480px);
+  }
+}
+
+.connect,.learn,.categories {
+  overflow: hidden;
+  margin-bottom: 4rem;
+  @media all and (min-width: 1440px) {
+    margin-bottom: 7.5rem;
+  }
+  h2 {
+    margin-bottom: 0.75rem;
+    margin-top: 1rem;
+
+    @media all and (min-width: 768px) {
+      margin-bottom: 1rem;
+    }
+
+    @media all and (min-width: 900px) {
+      margin-bottom: 1.5rem;
+      margin-top: 1.5rem;
+    }
+  }
+  p {
+    @media all and (min-width: 900px) {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.section {
+  padding: 3.5rem 0;
+  overflow: hidden;
+  @media all and (min-width: 1300px) { 
+    padding-top: 7.5rem;
+  }
+  &__connect {
+    background-color: $secondary-color-dustygreen;
+    .row {
+        @media all and (min-width: 375px) {
+          padding-right: 3.5rem;
+        }
+        @media all and (min-width: 540px) {
+          padding-right: 6rem;
+        }
+        @media all and (min-width: 768px) {
+          padding-right: 0;
+          .content__image {
+           padding-right: 1.5rem;
+          }
+          .content__description {
+            padding-right: 0;
+          }
+        }
+        @media all and (min-width: 1440px) {
+          .content__image {
+            padding-right: 2.5rem;
+          }
+          .content__description {
+            padding-left: 2.5rem;
+          }
+        }
+    }
+  }
+  &__learn {
+    background-color: $secondary-color-lilac;
+    .img__heading {
+      @media all and (min-width: 600px) {
+        margin-bottom: -2rem;
+      }
+      @media all and (min-width: 768px) {
+        margin-bottom: -3.3rem;
+      }
+    }
+
+    .learn .row {
+      @media all and (min-width: 375px) {
+        padding-left: 3.5rem;
+      }
+
+      @media all and (min-width: 540px) {
+        padding-left: 6rem;
+      }
+
+      @media all and (min-width: 768px) {
+        flex-direction: row-reverse;
+        padding-left: 0;
+         .content__image {
+           padding-left: 1.5rem;
+         }
+      }
+      @media all and (min-width: 1440px) {
+        .content__image {
+          padding-left: 2.5rem;
+        }
+
+        .content__description {
+          padding-right: 2.5rem;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  &__heading,&__text,&__find,&__image {
+    // margin-bottom: -100px;
+    overflow: hidden;
+  }
+}
+
+.img {
+  &__heading {
+    width: 85%;
+    margin-bottom: -0.4rem;
+    margin-left: auto;
+
+    @media all and (min-width: 600px) {
+      margin-bottom: -0.875rem;
+    }
+
+    @media all and (min-width: 900px) {
+      margin-bottom: -1.6rem;
+    }
+  }
+  &-content {
+    border: 8px solid $body-color;
+    object-fit: cover;
+    overflow: hidden;
+    width: 100%;
+    vertical-align: baseline;
+
+    @media all and (min-width: 768px) {
+      height: 100%;
+    }
+
+    @media all and (min-width: 1300px) {
+      border-width: 16px;
+    }
+  }
+  &--border {
+    border: 6px solid $body-color;
+
+    @media all and (min-width: 1300px) {
+      border-width: 12px;
+    }
+  }
+}
+
+video {
+  height: auto;
+  border: 6px solid $body-color;
+  width: 100%;
+  @media all and (min-width: 1300px) {
+    border-width: 12px;
+  }
+}
+
+.carousel-item {
+  &-heading {
+    background-color: $primary-color;
+    min-height: 7.5rem;
+    @media all and (min-width: 900px) {
+      min-height: 8.6rem;
+    }
+    @media all and (min-width: 1300px) {
+      min-height: 12.625rem;
+    }
+  }
+}
+
+.multiCarousel {
+  float: left;
+  overflow: hidden;
+  padding-left: 32px;
+  width: 100%;
+  position: relative;
+  @media all and (min-width: 600px) {
+    padding-left: 3rem;
+  }
+
+  @media all and (min-width: 900px) {
+    padding-left: 5rem;
+  }
+
+  @media all and (min-width: 1300px) {
+    padding-left: 7.5rem;
+  }
+
+  @media all and (min-width: 1680px) {
+    padding-left: 15rem;
+  }
+
+  &-inner {
+    transition: 1s ease all;
+    float: left;
+    .item {
+      float: left;
+      &>div {
+        margin-right: 1rem;
+
+        @media all and (min-width: 600px) {
+          margin-right: 1.5rem;
+        }
+
+        @media all and (min-width: 900px) {
+          margin-right: 2.5rem;
+        }
+
+        @media all and (min-width: 1300px) {
+          margin-right: 3.75rem;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .leftLst,
+  .rightLst {
+    position: absolute;
+    border-radius: 50%;
+    top: calc(50% - 20px);
+    display: none;
+  }
+
+  .leftLst {
+    left: 0;
+  }
+
+  .rightLst {
+    right: 0;
+  }
+
+  .leftLst.over,
+  .rightLst.over {
+    pointer-events: none;
+    background: #ccc;
+  }
+}
+
+.resources {
+  &-content {
+    h4 {
+      padding: 0;
+    }
+  }
+  &-text {
+    border-top: 6px solid $body-color;
+    margin-top: 0;
+    @media all and (min-width: 1300px) {
+      border-width: 12px;
+    }
+  }
+  .row {
+    flex-wrap: nowrap;
+  }
+}
+
+.tag {
+  background-color: $primary-color;
+  margin-right: 0.375rem;
+  padding: 0.2rem 0.6rem;
+  &-date {
+    align-items: center;
+    font-size: 0.625rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+
+    @media all and (min-width: 768px) {
+      margin-top: 1rem;
+    }
+
+    @media all and (min-width: 600px) {
+      margin-bottom: 0.65rem;
+      font-size: 0.75rem;
+    }
+
+    @media all and (min-width: 900px) {
+      margin-bottom: 0.75rem;
+      font-size: 0.875rem;
+    }
+  }
+}
+
+// .resources {
+//   .multiCarousel-inner .item:nth-child(3) > div{
+//     margin-right: 0;
+//   }
+// }
